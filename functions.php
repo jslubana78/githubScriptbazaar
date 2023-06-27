@@ -6,3 +6,8 @@ if ( ! function_exists('thr_enqueue_styles') ) {
     }
     add_action('wp_enqueue_scripts', 'thr_enqueue_styles');
 }
+
+function create_shortcode(){
+    return "<h2>Hello world !</h2>";
+}
+add_shortcode('my_shortcode', 'create_shortcode');
