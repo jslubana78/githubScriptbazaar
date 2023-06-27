@@ -11,3 +11,46 @@ function create_shortcode(){
     return "<h2>Hello world ! change1 from amendshortcode</h2>";
 }
 add_shortcode('my_shortcode', 'create_shortcode');
+
+function postslider(){
+    $html = '';
+
+    $html .= '<div class="postSlider">';
+    $html .= '<section class="regular slider">
+    <div>
+      <img src="http://placehold.it/350x300?text=1">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=2">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=3">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=4">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=5">
+    </div>
+    <div>
+      <img src="http://placehold.it/350x300?text=6">
+    </div>
+  </section>';
+    $html .= '</div>';
+
+    return $html;
+}
+add_shortcode('postslider', 'postslider');
+
+// echo get_stylesheet_directory_uri().'/slick/custom.css';
+
+//adding style and script for post slider
+function wpdocs_theme_name_scripts() {
+    wp_enqueue_style( 'post-slider-slick', get_stylesheet_directory_uri().'/slick/slick.css' );
+    wp_enqueue_style( 'post-slider-slick-theme', get_stylesheet_directory_uri().'/slick/slick-theme.css' );
+    wp_enqueue_style( 'post-slider', get_stylesheet_directory_uri().'/slick/custom.css' );
+    wp_enqueue_script( 'post-slider-jquery', '//code.jquery.com/jquery-2.2.0.min.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'post-slider', get_stylesheet_directory_uri() . '/slick/slick.js', array('post-slider-jquery'), '1.0.0', true );
+    wp_enqueue_script( 'post-slider-custom', get_stylesheet_directory_uri() . '/slick/custom.js', array('post-slider'), '1.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
