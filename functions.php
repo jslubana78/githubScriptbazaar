@@ -8,6 +8,6 @@ if ( ! function_exists('thr_enqueue_styles') ) {
 }
 
 function create_shortcode(){
-    return "<h2>Hello world ! change1</h2>";
+    return "<h2>Hello world ! change1 from amendshortcode</h2>";
 }
 add_shortcode('my_shortcode', 'create_shortcode');
