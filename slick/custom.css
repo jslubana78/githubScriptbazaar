@@ -46,6 +46,7 @@
 .image-div {
   height: 470px !important;
   background-size: cover;
+  background-color: #eee;
 }
 .main-slide {
   position: relative;
